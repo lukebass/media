@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "id": "b98a",
+      "name": "Julian Wilderman"
+    },
+    {
+      "id": "c031",
+      "name": "Enrique Daniel"
+    },
+    {
+      "id": "6621",
+      "name": "Casey Considine"
+    }
+  ],
+  "albums": [],
+  "photos": []
+}
