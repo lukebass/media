@@ -17,7 +17,7 @@ function UsersListItem({ user }) {
             >
                 <GoTrashcan />
             </Button>
-            {error && <div>Error Deleting User</div>}
+            {error && 'Error Deleting User'}
             {user.name}
         </>
     );

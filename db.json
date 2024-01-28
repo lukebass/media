@@ -17,6 +17,22 @@
       "name": "Casey Considine"
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": "a851",
+      "userId": 1,
+      "title": "Generic Bronze Bacon"
+    },
+    {
+      "id": "7a35",
+      "userId": 1,
+      "title": "Intelligent Soft Table"
+    },
+    {
+      "id": "3b20",
+      "userId": 1,
+      "title": "Incredible Soft Fish"
+    }
+  ],
   "photos": []
 }
