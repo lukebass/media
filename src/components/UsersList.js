@@ -1,36 +1,27 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { fetchUsers, addUser } from '../store';
+import { useFetchUsersQuery, useAddUserMutation } from '../store';
 import Button from './Button';
 import Skeleton from './Skeleton';
 import UsersListItem from './UsersListItem.js';
-import { useThunk } from '../hooks/useThunk';
 
 function UsersList() {
-    const [doFetchUsers, isFetchingUsers, fetchingUsersError] = useThunk(fetchUsers);
-    const [doAddUser, isAddingUser, addingUserError] = useThunk(addUser);
-    const { data } = useSelector((state) => state.users);
-
-    useEffect(() => {
-        doFetchUsers();
-    }, [doFetchUsers]);
+    const { data, error, isFetching } = useFetchUsersQuery();
+    const [addUser, results] = useAddUserMutation();
 
     let content;
-    if (isFetchingUsers) content = <Skeleton times={6} className='h-10 w-full' />;
-    else if (fetchingUsersError) content = <div>Error Loading Users</div>;
+    if (isFetching) content = <Skeleton times={6} className='h-10 w-full' />;
+    else if (error) content = <div>Error Loading Users</div>;
     else content = data.map((user) => <UsersListItem key={user.id} user={user} />);
 
     return (
         <div>
-            <div className='flex justify-between items-center m-3'>
-                <h1 className='m-2 text-xl'>Users</h1>
+            <div className='m-3 flex items-center justify-between'>
+                <h1 className='m-2 text-xl font-bold'>Users</h1>
                 <Button 
-                    loading={isAddingUser} 
-                    onClick={doAddUser}
+                    loading={results.isLoading} 
+                    onClick={() => addUser()}
                 >
                     + Add User
                 </Button>
-                {addingUserError && 'Error Creating User'}
             </div>
             {content}
         </div>
