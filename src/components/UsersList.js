@@ -17,7 +17,7 @@ function UsersList() {
 
     let content;
     if (isFetchingUsers) content = <Skeleton times={6} className='h-10 w-full' />;
-    else if (fetchingUsersError) content = <div>Error...</div>;
+    else if (fetchingUsersError) content = <div>Error Loading Users</div>;
     else content = data.map((user) => <UsersListItem key={user.id} user={user} />);
 
     return (

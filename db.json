@@ -19,20 +19,46 @@
   ],
   "albums": [
     {
-      "id": "a851",
-      "userId": 1,
-      "title": "Generic Bronze Bacon"
-    },
-    {
-      "id": "7a35",
-      "userId": 1,
-      "title": "Intelligent Soft Table"
-    },
-    {
       "id": "3b20",
       "userId": 1,
       "title": "Incredible Soft Fish"
+    },
+    {
+      "id": "8e0a",
+      "userId": 1,
+      "title": "Handmade Plastic Tuna"
+    },
+    {
+      "id": "b993",
+      "userId": 1,
+      "title": "Intelligent Rubber Chips"
+    },
+    {
+      "id": "0833",
+      "userId": "b98a",
+      "title": "Incredible Soft Bike"
+    },
+    {
+      "id": "2705",
+      "userId": "c031",
+      "title": "Tasty Granite Soap"
+    },
+    {
+      "id": "4ec2",
+      "userId": "6621",
+      "title": "Luxurious Rubber Pants"
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "id": "3375",
+      "albumId": "3b20",
+      "url": "https://loremflickr.com/150/150/abstract?lock=59713"
+    },
+    {
+      "id": "84b9",
+      "albumId": "3b20",
+      "url": "https://loremflickr.com/150/150/abstract?lock=51373"
+    }
+  ]
 }

@@ -1,16 +1,17 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { faker } from '@faker-js/faker';
 
-const albumsApi = createApi({
+export const albumsApi = createApi({
     reducerPath: 'albums',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3005/' }),
     endpoints(builder) {
         return {
             fetchAlbums: builder.query({
-                providesTags: (result, error, user) => [{ 
-                    type: 'Album', 
-                    id: user.id 
-                }],
+                providesTags: (result, error, user) => {
+                    const tags = result.map((album) => ({ type: 'Album', id: album.id }));
+                    tags.push({ type: 'UsersAlbums', id: user.id });
+                    return tags;
+                },
                 query: (user) => ({
                     url: 'albums',
                     method: 'GET',
@@ -21,7 +22,7 @@ const albumsApi = createApi({
             }),
             addAlbum: builder.mutation({
                 invalidatesTags: (result, error, user) => [{ 
-                    type: 'Album', 
+                    type: 'UsersAlbums', 
                     id: user.id 
                 }],
                 query: (user) => ({
@@ -36,7 +37,7 @@ const albumsApi = createApi({
             removeAlbum: builder.mutation({
                 invalidatesTags: (result, error, album) => [{ 
                     type: 'Album', 
-                    id: album.userId 
+                    id: album.id 
                 }],
                 query: (album) => ({
                     url: `albums/${album.id}`,
@@ -52,4 +53,3 @@ export const {
     useAddAlbumMutation,
     useRemoveAlbumMutation
 } = albumsApi;
-export { albumsApi };
