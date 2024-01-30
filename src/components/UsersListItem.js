@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import { GoTrashcan } from 'react-icons/go';
 import { useRemoveUserMutation } from '../store';
 import Button from './Button';
 import ExpandablePanel from './ExpandablePanel';
 import AlbumsList from './AlbumsList';
 
-function UsersListItem({ user }) {
+const UsersListItem = ({ user }) => {
     const [removeUser, results] = useRemoveUserMutation();
 
     const header = (
@@ -26,5 +27,9 @@ function UsersListItem({ user }) {
         </ExpandablePanel>
     );
 }
+
+UsersListItem.propTypes = {
+    user: PropTypes.object
+};
 
 export default UsersListItem;

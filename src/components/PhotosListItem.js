@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import { GoTrashcan } from 'react-icons/go';
 import { useRemovePhotoMutation } from '../store';
 
-function PhotosListItem({ photo }) {
+const PhotosListItem = ({ photo }) => {
     const [removePhoto] = useRemovePhotoMutation();
     return (
         <div 
@@ -15,5 +16,9 @@ function PhotosListItem({ photo }) {
         </div>
     )
 }
+
+PhotosListItem.propTypes = {
+    photo: PropTypes.object
+};
 
 export default PhotosListItem;

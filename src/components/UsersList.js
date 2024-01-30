@@ -3,7 +3,7 @@ import Button from './Button';
 import Skeleton from './Skeleton';
 import UsersListItem from './UsersListItem.js';
 
-function UsersList() {
+const UsersList = () => {
     const { data, error, isFetching } = useFetchUsersQuery();
     const [addUser, results] = useAddUserMutation();
 

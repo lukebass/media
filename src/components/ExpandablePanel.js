@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { GoChevronDown, GoChevronLeft } from 'react-icons/go';
 
-function ExpandablePanel({ header, children }) {
+const ExpandablePanel = ({ header, children }) => {
     const [expanded, setExpanded] = useState(false);
 
     return (
@@ -25,5 +26,10 @@ function ExpandablePanel({ header, children }) {
         </div>
     );
 }
+
+ExpandablePanel.propTypes = {
+    header: PropTypes.node,
+    children: PropTypes.node
+};
 
 export default ExpandablePanel;

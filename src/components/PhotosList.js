@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import { useFetchPhotosQuery, useAddPhotoMutation } from '../store';
 import Button from './Button';
 import Skeleton from './Skeleton';
 import PhotosListItem from './PhotosListItem';
 
-function PhotosList({ album }) {
+const PhotosList = ({ album }) => {
     const { data, error, isFetching } = useFetchPhotosQuery(album);
     const [addPhoto, results] = useAddPhotoMutation();
 
@@ -27,5 +28,9 @@ function PhotosList({ album }) {
         </div>
     );
 }
+
+PhotosList.propTypes = {
+    album: PropTypes.object
+};
 
 export default PhotosList;

@@ -1,7 +1,7 @@
 import className from 'classnames';
 import { GoSync } from 'react-icons/go';
 
-function Button({
+const Button = ({
   children,
   primary,
   secondary,
@@ -12,7 +12,7 @@ function Button({
   rounded,
   loading,
   ...rest
-}) {
+}) => {
   const classes = className(
     rest.className,
     'flex items-center px-3 py-1.5 border h-8',

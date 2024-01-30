@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-function Skeleton({ times, className }) {
+const Skeleton = ({ times, className }) => {
     const outerClassNames = classNames(
         'relative',
         'overflow-hidden',
@@ -29,5 +30,10 @@ function Skeleton({ times, className }) {
 
     return boxes;
 }
+
+Skeleton.propTypes = {
+    times: PropTypes.number,
+    className: PropTypes.string
+};
 
 export default Skeleton;

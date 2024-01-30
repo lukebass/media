@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import { useFetchAlbumsQuery, useAddAlbumMutation } from '../store';
 import Skeleton from './Skeleton';
 import Button from './Button';
 import AlbumsListItem from './AlbumsListItem';
 
-function AlbumsList({ user }) {
+const AlbumsList = ({ user }) => {
     const { data, error, isFetching } = useFetchAlbumsQuery(user);
     const [addAlbum, results] = useAddAlbumMutation();
     
@@ -27,5 +28,9 @@ function AlbumsList({ user }) {
         </div>
     );
 }
+
+AlbumsList.propTypes = {
+    user: PropTypes.object
+};
 
 export default AlbumsList;
