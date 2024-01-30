@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { faker } from '@faker-js/faker';
 
 export const usersApi = createApi({
     reducerPath: 'users',
@@ -15,12 +14,10 @@ export const usersApi = createApi({
             }),
             addUser: builder.mutation({
                 invalidatesTags: () => [{ type: 'Users' }],
-                query: () => ({
+                query: (name) => ({
                     url: 'users',
                     method: 'POST',
-                    body: {
-                        name: faker.name.fullName()
-                    }
+                    body: { name }
                 })
             }),
             removeUser: builder.mutation({

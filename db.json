@@ -7,18 +7,6 @@
     {
       "id": "b98a",
       "name": "Julian Wilderman"
-    },
-    {
-      "id": "c031",
-      "name": "Enrique Daniel"
-    },
-    {
-      "id": "6621",
-      "name": "Casey Considine"
-    },
-    {
-      "id": "5ed7",
-      "name": "Rosa Barton"
     }
   ],
   "albums": [
@@ -38,18 +26,8 @@
       "title": "Intelligent Rubber Chips"
     },
     {
-      "id": "0833",
-      "userId": "b98a",
-      "title": "Incredible Soft Bike"
-    },
-    {
-      "id": "2705",
-      "userId": "c031",
-      "title": "Tasty Granite Soap"
-    },
-    {
       "id": "4ec2",
-      "userId": "6621",
+      "userId": null,
       "title": "Luxurious Rubber Pants"
     }
   ],
